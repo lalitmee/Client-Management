@@ -1,0 +1,97 @@
+{
+
+"records" : [
+  {
+    "client_ID": 201452014,
+    "first_name": "Lalit",
+    "last_name": "Kumar",
+    "email": "lalit@gmail.com",
+    "phone_number": "9712618438",
+    "business_name": "student",
+    "bank_account_number": "209748897138",
+    "address": {
+      "street1" : "Moh Mahadev",
+      "street2" : "Kamelpur Road",
+      "city": "Dhanaura",
+      "state": "Uttar Pradesh",
+      "Country" : "India",
+      "pincode" : 244231
+    },
+    "status": "active"
+  },
+  {
+    "client_ID": 201452008,
+    "first_name": "Raghav",
+    "last_name": "Kumar",
+    "email": "lalit@gmail.com",
+    "phone_number": "9712618438",
+    "business_name": "student",
+    "bank_account_number": "209748897138",
+    "address": {
+      "street1" : "Moh Mahadev",
+      "street2" : "Kamelpur Road",
+      "city": "Dhanaura",
+      "state": "Uttar Pradesh",
+      "Country" : "India",
+      "pincode" : 244231
+    },
+    "status": "active"
+  },
+  {
+    "client_ID": 21452002,
+    "first_name": "Vijay",
+    "last_name": "Anand",
+    "email": "vijay@gmail.com",
+    "phone_number": "9712334554",
+    "business_name": "student",
+    "bank_account_number": "39385983958",
+    "address": {
+      "street1" : "Moh ganga",
+      "street2" : "Kamal Road",
+      "city": "Dhanauri",
+      "state": "M.P.",
+      "Country" : "India",
+      "pincode" : 214231
+    },
+    "status": "passive"
+  },
+  {
+    "client_ID": 201452030,
+    "first_name": "Sharad",
+    "last_name": "Patel",
+    "email": "sharad@gmail.com",
+    "phone_number": "9712418438",
+    "business_name": "student",
+    "bank_account_number": "453748897138",
+    "address": {
+      "street1" : "Moh Yamuna",
+      "street2" : "Kamal Kanga Gali",
+      "city": "Dungra",
+      "state": "Jharkhand",
+      "Country" : "India",
+      "pincode" : 244433
+    },
+    "status": "prospect"
+  },
+  {
+    "client_ID": 20145131,
+    "first_name": "Kartik",
+    "last_name": "Sayani",
+    "email": "kartik@gmail.com",
+    "phone_number": "9712343438",
+    "business_name": "student",
+    "bank_account_number": "453538897138",
+    "address": {
+    "street1" : "Moh Mahadev",
+    "street2" : "Kamelpur Road",
+    "city": "Dhanaura",
+    "state": "Uttar Prades",
+    "Country" : "India",
+    "pincode" : 244231
+  },
+    "status": "pipline"
+  }
+
+]
+
+}

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngClients">
+<head>
+    <meta charset="UTF-8">
+    <title>Clients Manager</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body id="homepage">
+<div ng-controller="clientController">
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand active" href="index.html"> Clients Manager </a>
+            </div>
+
+            <button class="btn navbar-btn"><a href="add.html">Add Client</a> </button>
+
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="col-sm-12 price-form">
+        <button
+                class="btn btn-primary"
+                ng-click="addClienting = !addClienting"
+                ng-show="!addClienting">Add Client
+        </button>
+
+        <button
+                class="btn btn-danger"
+                ng-click="addClienting = !addClienting"
+                ng-show="addClienting">Close
+        </button>
+
+
+        <div class="listing-form" ng-if="addClienting">
+
+                <h3>Add a Client</h3>
+
+                <div class="row listing-form-row">
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <span class="input-group-addon">First Name</span>
+                            <input
+                                    type="text"
+                                    placeholder="Enter the First Name"
+                                    class="form-control"
+                                    ng-model="newClient.first_name">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <span class="input-group-addon">Last Name</span>
+                            <input
+                                    type="text"
+                                    placeholder="Enter the Last Name"
+                                    class="form-control"
+                                    ng-model="newClient.last_name">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <span class="input-group-addon">Email</span>
+                            <input
+                                    type="text"
+                                    placeholder="Enter the email"
+                                    class="form-control"
+                                    ng-model="newClient.email">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row listing-form-row">
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <span class="input-group-addon">Phone No.</span>
+                            <input
+                                    type="text"
+                                    placeholder="Enter the phone no."
+                                    class="form-control"
+                                    ng-model="newClient.phone_number">
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <span class="input-group-addon">Business Name</span>
+                            <input
+                                    type="text"
+                                    placeholder="Enter the business name"
+                                    class="form-control"
+                                    ng-model="newClient.business_name">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <span class="input-group-addon">Bank Account No.</span>
+                            <input
+                                    type="number"
+                                    placeholder="Enter the account no."
+                                    class="form-control"
+                                    ng-model="newClient.bank_account_number">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <span class="input-group-addon">Address</span>
+                            <input
+                                    type="text"
+                                    placeholder="Enter the street1"
+                                    class="form-control"
+                                    ng-model="newClient.address.street1">
+                            <input
+                                    type="text"
+                                    placeholder="Enter the street2"
+                                    class="form-control"
+                                    ng-model="newClient.address.street2"
+                            >
+
+                            <input
+                                    type="text"
+                                    placeholder="Enter the city"
+                                    class="form-control"
+                                    ng-model="newClient.address.city"
+                            >
+
+                            <input
+                                    type="text"
+                                    placeholder="Enter the state"
+                                    class="form-control"
+                                    ng-model="newClient.address.state"
+                            >
+
+                            <input
+                                    type="text"
+                                    placeholder="Enter the country"
+                                    class="form-control"
+                                    ng-model="newClient.address.country"
+                            >
+
+                            <input
+                                    type="text"
+                                    placeholder="Enter the pincode"
+                                    class="form-control"
+                                    ng-model="newClient.address.pincode"
+                            >
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <span class="input-group-addon">Status</span>
+                            <select
+                                    type="select"
+                                    placeholder="Enter the status"
+                                    class="form-control"
+                                    ng-model="newClient.status">
+                                <option value="active">Active</option>
+                                <option value="passive">Passive</option>
+                                <option value="pipeline">Pipeline</option>
+                                <option value="prospect">Prospect</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+            <button
+                    class="btn btn-primary listing-button"
+                    ng-click="addClient(newClient)"
+                    ng-show="addClienting">Add
+            </button>
+            <pre>{{newClient | json}}</pre>
+
+            </div>
+        </div>
+
+        <div class="listing-form" ng-if="editClienting">
+
+            <h3>Edit Client</h3>
+
+            <div class="row listing-form-row">
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">First Name</span>
+                        <input
+                                type="text"
+                                placeholder="Enter the First Name"
+                                class="form-control"
+                                ng-model="existingClienting.first_name">
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">Last Name</span>
+                        <input
+                                type="text"
+                                placeholder="Enter the Last Name"
+                                class="form-control"
+                                ng-model="existingClienting.last_name">
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">Email</span>
+                        <input
+                                type="text"
+                                placeholder="Enter the email"
+                                class="form-control"
+                                ng-model="existingClienting.email">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row listing-form-row">
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">Phone No.</span>
+                        <input
+                                type="text"
+                                placeholder="Enter the phone no."
+                                class="form-control"
+                                ng-model="existingClienting.phone_number">
+                        </textarea>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">Business Name</span>
+                        <input
+                                type="text"
+                                placeholder="Enter the business name"
+                                class="form-control"
+                                ng-model="existingClienting.business_name">
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">Bank Account No.</span>
+                        <input
+                                type="number"
+                                placeholder="Enter the account no."
+                                class="form-control"
+                                ng-model="existingClienting.bank_account_number">
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">Address</span>
+                        <input
+                                type="text"
+                                placeholder="Enter the street1"
+                                class="form-control"
+                                ng-model="existingClienting.address.street1">
+                        <input
+                                type="text"
+                                placeholder="Enter the street2"
+                                class="form-control"
+                                ng-model="existingClienting.address.street2"
+                        >
+
+                        <input
+                                type="text"
+                                placeholder="Enter the city"
+                                class="form-control"
+                                ng-model="existingClienting.address.city"
+                        >
+
+                        <input
+                                type="text"
+                                placeholder="Enter the state"
+                                class="form-control"
+                                ng-model="existingClienting.address.state"
+                        >
+
+                        <input
+                                type="text"
+                                placeholder="Enter the country"
+                                class="form-control"
+                                ng-model="existingClienting.address.country"
+                        >
+
+                        <input
+                                type="text"
+                                placeholder="Enter the pincode"
+                                class="form-control"
+                                ng-model="existingClienting.address.pincode"
+                        >
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">Status</span>
+                        <select
+                                type="select"
+                                placeholder="Enter the address"
+                                class="form-control"
+                                ng-model="existingClienting.status">
+                            <option value="active">Active</option>
+                            <option value="passive">Passive</option>
+                            <option value="pipeline">Pipeline</option>
+                            <option value="prospect">Prospect</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <button
+                    class="btn btn-primary Client-button"
+                    ng-click="saveClientEdit()"
+                    ng-show="editClienting">Save
+            </button>
+
+            <button
+                    class="btn btn-danger Client-button"
+                    ng-click="deleteClient(existingClienting)"
+                    ng-show="editClienting">Delete Existing Client
+            </button>
+        </div>
+        <div class="col-sm-3" ng-repeat="client in clients | orderBy: '-id'">
+            <div class="thumbnail">
+                <div class="caption">
+                    <div ng-hide="showDetails === true">
+                        <h2> <strong>Name : </strong> {{ client.first_name + " " + client.last_name }}</h2>
+                        <h3> <strong>Client ID : </strong> {{ client.client_ID }}</h3>
+                        <h3> <strong>Email ID : </strong> {{ client.email }}</h3>
+                        <h3> <strong>Phone No. : </strong> {{ client.phone_number }}</h3>
+                        <h3> <strong>Business Name : </strong> {{ client.business_name }}</h3>
+
+                        <div class="second">
+                            <h2> <strong>Status : </strong> {{ client.status }}</h2>
+                        </div>
+
+                    </div>
+
+                    <button class="btn btn-xs btn-success"
+                            ng-hide="showDetails === true"
+                            ng-click="showDetails = !showDetails">
+                        Details
+                    </button>
+
+                    <button
+                            class="btn btn-xs btn-primary"
+                            ng-show="showDetails"
+                            ng-click="editClient(client)">Edit
+                    </button>
+
+                    <button class="btn btn-xs btn-danger"
+                            ng-show="showDetails === true"
+                            ng-click="showDetails = !showDetails">
+                        Close
+                    </button>
+
+
+                </div>
+
+            </div>
+
+            </div>
+
+
+        <span class="label">Ordered By: {{orderByField}}, Reverse Sort: {{reverseSort}}</span><br><br>
+        <table class="table table-bordered table-striped" >
+            <thead>
+            <tr>
+                <th
+                        ng-click="SortData('first_name')">Name
+                    <div ng-class="getSortClass('first_name')" ></div>
+                </th>
+                <th ng-click="SortData('client_ID')">Client ID</th>
+                <th>Business Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>City</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="tab" ng-repeat="clien in clients | orderBy:SortColumn:reverseSort">
+                <td>{{ clien.client_ID }}</td>
+                <td>{{ clien.first_name +" "+ clien.last_name}}</td>
+                <td>{{ clien.business_name }}</td>
+                <td>{{ clien.email }}</td>
+                <td>{{ clien.phone_number }}</td>
+                <td>{{ clien.address.city }}</td>
+                <td>
+                    <ul id="menu">
+
+                        <li><a href="edit.html"><i class="fa fa-trash" aria-hidden="true"></i></a></li>
+                        <li><a href="add.html"><i class="fa fa-pencil" aria-hidden="true"></i>
+                            </a></li>
+                        <li><a href="index.html"><i class="fa fa-eye" aria-hidden="true"></i>
+                        </a></li>
+                    </ul>
+
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        </div>
+</div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
+<script src="app.js"></script>
+<script src="scripts/clientController.js"></script>
+<script src="scripts/clientsFactory.js"></script>
+
+</html>

@@ -53,6 +53,13 @@ var app = angular.module('ngClients');
         })
 
 
+        $scope.findLength = function () {
+            var length = Object.keys($scope.clients);
+
+            return length;
+        }
+
+
         app.config(function ($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/home');
             $stateProvider

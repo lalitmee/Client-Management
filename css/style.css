@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 /* Add a black background color to the top navigation */
 html, body {
     width: 100%;
+    font-family: 'Open Sans', sans-serif;
 }
 
+h2, h3 {
+    color: #fff;
+}
 
 .container{
     width: 100%;
@@ -30,14 +36,15 @@ html, body {
 
 
 .thumbnail{
-    background-color: lightgreen;
+    background-color: deepskyblue;
 }
 
 
 .container .second {
-    width: 250px;
+    padding: 2%;
+    width: auto;
     height: 50px;
-    background-color: lightsalmon;
+    background-color: orange;
 }
 
 .client-form-row, .client-button {
@@ -66,3 +73,43 @@ table {
     margin: 0 auto;
 }
 
+.price-form {
+    margin: 1px 0 17px 0;
+    /* padding: 5%; */
+}
+
+#status {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#bold {
+    color: black;
+    float: left;
+}
+
+/* #light {
+    margin-right: 0;
+} */
+
+#details {
+    font-size: 20px;
+    margin: 0 0 0 142px; 
+    color: #fff;
+    background-color: #114911;
+    border-color: #043304;
+}
+
+#edit {
+    font-size: 20px;
+    color: #fff;
+    background-color: #148fd6;
+    border-color: #1773ec;
+}
+
+#close {
+    font-size: 20px;
+    color: #fff;
+    background-color: #ee1010;
+    border-color: #bd0514;
+}

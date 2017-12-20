@@ -26,8 +26,9 @@
     </nav>
 
     <div class="container">
-        <div class="col-sm-12 price-form">
+        <div class="col-sm-12 price-form" id="add-client">
         <button
+                
                 class="btn btn-primary"
                 ng-click="addClienting = !addClienting"
                 ng-show="!addClienting">Add Client
@@ -348,35 +349,38 @@
                     ng-show="editClienting">Delete Existing Client
             </button>
         </div>
-        <div class="col-sm-3" ng-repeat="client in clients | orderBy: '-id'">
+        <div class="col-sm-4" ng-repeat="client in clients | orderBy: '-id'">
             <div class="thumbnail">
                 <div class="caption">
                     <div ng-hide="showDetails === true">
-                        <h2> <strong>Name : </strong> {{ client.first_name + " " + client.last_name }}</h2>
-                        <h3> <strong>Client ID : </strong> {{ client.client_ID }}</h3>
-                        <h3> <strong>Email ID : </strong> {{ client.email }}</h3>
-                        <h3> <strong>Phone No. : </strong> {{ client.phone_number }}</h3>
-                        <h3> <strong>Business Name : </strong> {{ client.business_name }}</h3>
-
+                        <h2> <strong id="bold">Name : </strong> <span id="light">{{ client.first_name + " " + client.last_name }}</span> </h2>
+                        <h3> <strong id="bold">Client ID : </strong> <span id="light">{{ client.client_ID }}</span> </h3>
+                        <h3> <strong id="bold">Email ID : </strong> <span id="light">{{ client.email }}</span> </h3>
+                        <h3> <strong id="bold">Phone No. : </strong> <span id="light">{{ client.phone_number }}</span> </h3>
+                        <h3> <strong id="bold">Business Name : </strong><span id="light">{{ client.business_name }}</span> </h3>
+                        <hr>
                         <div class="second">
-                            <h2> <strong>Status : </strong> {{ client.status }}</h2>
+                            <h2 id="status"> <strong id="bold">Status : </strong> {{ client.status }}</h2>
                         </div>
 
                     </div>
-
-                    <button class="btn btn-xs btn-success"
+                    <hr>
+                    <button id="details" class="btn btn-xs btn-success"
                             ng-hide="showDetails === true"
                             ng-click="showDetails = !showDetails">
                         Details
                     </button>
 
                     <button
+                            id="edit"
                             class="btn btn-xs btn-primary"
                             ng-show="showDetails"
                             ng-click="editClient(client)">Edit
                     </button>
 
-                    <button class="btn btn-xs btn-danger"
+                    <button
+                            id="close"
+                            class="btn btn-xs btn-danger"
                             ng-show="showDetails === true"
                             ng-click="showDetails = !showDetails">
                         Close
